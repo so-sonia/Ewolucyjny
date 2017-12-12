@@ -46,9 +46,8 @@ class Evolution:
 
     def mutation(self, chromosome):
         mutate_point = rd.randint(0, len(chromosome))
-        #TO DO: losowana wartosc z rokladu normalnego
         chromosome[mutate_point] = max(self.parameter_min[mutate_point],
-            min(chromosome[mutate_point] + rd.normalvariate(), self.parameter_max[mutate_point]))
+            min(chromosome[mutate_point] + rd.normalvariate(0, 1), self.parameter_max[mutate_point]))
 
     def reproduction(self):
 
